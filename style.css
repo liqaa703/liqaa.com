@@ -1,0 +1,360 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: #b47434;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Layout */
+.layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Card */
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    min-height: 90vh;
+    background: #f7f7f7;
+    border-radius: 24px;
+    padding: 30px 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    animation: cardFade 0.8s ease forwards;
+}
+
+/* تثبيت النص بالمنتصف دائمًا */
+.card,
+.card * {
+    text-align: center !important;
+}
+
+/* Language Switch */
+.lang-switch {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    gap: 6px;
+}
+
+.lang-switch button {
+    background: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
+    color: #000;
+}
+
+.lang-switch button.active {
+    background: #b47434;
+    color: #fff;
+}
+
+/* Share Button */
+.share-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ff4081;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+    animation: pulse 2.5s infinite;
+}
+
+.share-btn:hover {
+    background: #e73370;
+    transform: translateY(-2px);
+}
+
+/* Logo */
+.logo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+/* Text */
+h1 {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.desc {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Social */
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    font-size: 24px;
+    margin-top: 15px;
+}
+
+.social a {
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.social a:hover {
+    transform: scale(1.2);
+}
+
+/* Links */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.link {
+    background: #fff;
+    padding: 16px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;   /* توسيط المحتوى */
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    text-decoration: none;
+    color: #000;
+    transition: 0.2s;
+}
+
+
+.link:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.link:active {
+    transform: scale(0.97);
+}
+
+/* Add Button */
+.add-btn {
+    margin-top: auto;
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    font-size: 12px;
+    color: #444;
+    margin-top: 10px;
+}
+
+/* QR */
+.qr-side {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.9);
+    padding: 10px;
+    border-radius: 14px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.qr-side img {
+    width: 110px;
+}
+
+/* Animations */
+@keyframes cardFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo,
+h1,
+.desc,
+.social,
+.links .link,
+.add-btn,
+footer {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.logo { animation-delay: 0.1s; }
+h1 { animation-delay: 0.2s; }
+.desc { animation-delay: 0.3s; }
+.social { animation-delay: 0.4s; }
+.links .link:nth-child(1) { animation-delay: 0.5s; }
+.links .link:nth-child(2) { animation-delay: 0.6s; }
+.links .link:nth-child(3) { animation-delay: 0.7s; }
+.links .link:nth-child(4) { animation-delay: 0.8s; }
+.add-btn { animation-delay: 0.9s; }
+footer { animation-delay: 1s; }
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,64,129,0.6); }
+    70% { box-shadow: 0 0 0 12px rgba(255,64,129,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,64,129,0); }
+}
+
+/* Responsive */
+@media(max-width: 480px){
+    .card {
+        min-height: auto;
+    }
+    .qr-side {
+        position: static;
+        margin-top: 15px;
+    }
+}
+/* تثبيت جميع النصوص في المنتصف دائمًا */
+h1,
+p,
+.desc,
+footer,
+.add-btn,
+.share-btn,
+.lang-switch,
+.lang-switch button,
+.social,
+.social a,
+.links,
+.link span {
+    text-align: center !important;
+}
+/* ===== Welcome Animation ===== */
+#welcome {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 0.8s ease forwards;
+    animation-delay: 2.2s;
+}
+
+.welcome-box {
+    background: #fff;
+    padding: 26px 32px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    animation: popIn 0.6s ease forwards;
+}
+
+.welcome-title {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #b47434;
+}
+
+.welcome-sub {
+    display: block;
+    font-size: 14px;
+    margin-top: 6px;
+    color: #555;
+}
+
+/* Animations */
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+/* زر واتساب ذكي */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    background: #25D366;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 999;
+    animation: whatsappPulse 2.5s infinite;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* نبض */
+@keyframes whatsappPulse {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+    70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
