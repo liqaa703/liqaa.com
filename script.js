@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* =======================
    WhatsApp Smart Booking
 ======================= */
-const whatsappNumber = "9665XXXXXXXX"; // رقمك بدون +
+const whatsappNumber = "9665536670934"; // رقمك بدون +
 
 function updateWhatsAppLink(lang) {
     const messageAR = 
